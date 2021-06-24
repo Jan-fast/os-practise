@@ -65,7 +65,7 @@ int main()
 		sum += result->sum;
 		free(result);
 	}
-
+	printf("PI/4 = %lf\nPI = %lf\n", sum, sum*4);
 
 	return 0;
 }

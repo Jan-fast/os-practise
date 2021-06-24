@@ -20,15 +20,12 @@ void mysys(char *command) {
         num=num+1;
         p = strsep(&buff, " ");
     }
-    char *agrv2[num];
-    for(int i=0;i<num;i++)
-    agrv2[i]=agrv[i];
-    agrv2[num]=NULL;
-
+    agrv[num]=NULL;
+    
     pid_t pid;
     pid = fork();
     if (pid == 0) {
-        int error = execvp(agrv2[0], agrv2); 
+        int error = execvp(agrv[0], agrv); 
         if (error < 0)
             perror("execv");
         exit(123);
